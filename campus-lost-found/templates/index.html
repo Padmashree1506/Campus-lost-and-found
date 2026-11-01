@@ -1,0 +1,59 @@
+<!-- index.html - Home page -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Campus Lost & Found System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- Navigation bar (same on every page) -->
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/report_lost">Report Lost Item</a>
+        <a href="/report_found">Report Found Item</a>
+        <a href="/items">View All Items</a>
+    </div>
+
+    <div class="container">
+        <h1>Campus Lost & Found System</h1>
+        <p>
+            This website helps students report lost items, report found items,
+            search for belongings, and claim items found on the campus.
+        </p>
+
+        <h2>What do you want to do?</h2>
+        <a class="button" href="/report_lost">Report Lost Item</a>
+        <a class="button" href="/report_found">Report Found Item</a>
+        <a class="button" href="/items">View All Items</a>
+
+        <h2>Recently Reported Items</h2>
+
+        <!-- If there are items, show the table. Otherwise show a message. -->
+        {% if items %}
+        <table>
+            <tr>
+                <th>Item Name</th>
+                <th>Category</th>
+                <th>Location</th>
+                <th>Date</th>
+                <th>Status</th>
+            </tr>
+            <!-- Repeat one table row for every item -->
+            {% for item in items %}
+            <tr>
+                <td>{{ item["item_name"] }}</td>
+                <td>{{ item["category"] }}</td>
+                <td>{{ item["location"] }}</td>
+                <td>{{ item["date"] }}</td>
+                <td>{{ item["status"] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <p>No items have been reported yet.</p>
+        {% endif %}
+    </div>
+
+</body>
+</html>

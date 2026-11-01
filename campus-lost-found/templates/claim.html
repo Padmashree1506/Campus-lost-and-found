@@ -1,0 +1,63 @@
+<!-- claim.html - Form to claim a found item -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Claim an Item</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- Navigation bar (same on every page) -->
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/report_lost">Report Lost Item</a>
+        <a href="/report_found">Report Found Item</a>
+        <a href="/items">View All Items</a>
+    </div>
+
+    <div class="container">
+        <h1>Claim an Item</h1>
+
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <!-- item is None when the item does not exist or is not a found item -->
+        {% if item %}
+
+            <h2>Item Details</h2>
+            <table>
+                <tr><th>Item Name</th><td>{{ item["item_name"] }}</td></tr>
+                <tr><th>Category</th><td>{{ item["category"] }}</td></tr>
+                <tr><th>Description</th><td>{{ item["description"] }}</td></tr>
+                <tr><th>Location Found</th><td>{{ item["location"] }}</td></tr>
+                <tr><th>Date Found</th><td>{{ item["date"] }}</td></tr>
+            </table>
+
+            {% if message %}
+            <p class="success">{{ message }}</p>
+            <p>The finder will review your request. The item is not marked as returned yet.</p>
+            {% else %}
+
+            <h2>Why is this item yours?</h2>
+            <form method="POST">
+                <label>Your Name:</label>
+                <input type="text" name="claimant_name" value="{{ request.form.get('claimant_name', '') }}" required>
+
+                <label>Your Email:</label>
+                <input type="email" name="claimant_email" value="{{ request.form.get('claimant_email', '') }}" required>
+
+                <label>Explain why you think this item belongs to you:</label>
+                <textarea name="explanation" rows="4" required>{{ request.form.get('explanation', '') }}</textarea>
+
+                <button type="submit">Submit Claim</button>
+            </form>
+
+            {% endif %}
+        {% endif %}
+
+        <p><a href="/items">Back to All Items</a></p>
+    </div>
+
+</body>
+</html>

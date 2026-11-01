@@ -1,0 +1,81 @@
+<!-- items.html - Shows all items with search and filter -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View All Items</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- Navigation bar (same on every page) -->
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/report_lost">Report Lost Item</a>
+        <a href="/report_found">Report Found Item</a>
+        <a href="/items">View All Items</a>
+    </div>
+
+    <div class="container">
+        <h1>All Lost and Found Items</h1>
+
+        <!-- Search and filter form. GET puts the values in the URL. -->
+        <form method="GET" action="/items" class="search-form">
+            <input type="text" name="search" placeholder="Search by item name or category" value="{{ search }}">
+
+            <select name="filter" id="filter">
+                <option value="All" {% if filter == "All" %}selected{% endif %}>All Items</option>
+                <option value="Lost" {% if filter == "Lost" %}selected{% endif %}>Lost Items</option>
+                <option value="Found" {% if filter == "Found" %}selected{% endif %}>Found Items</option>
+            </select>
+
+            <button type="submit">Search</button>
+            <a href="/items">Clear</a>
+        </form>
+
+        <script>
+            // Submit the form automatically when the dropdown is changed
+            document.getElementById("filter").onchange = function () {
+                this.form.submit();
+            };
+        </script>
+
+        {% if items %}
+        <p>Total items shown: {{ items|length }}</p>
+        <table>
+            <tr>
+                <th>Item Name</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Location</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Contact</th>
+                <th>Claim</th>
+            </tr>
+            {% for item in items %}
+            <tr>
+                <td>{{ item["item_name"] }}</td>
+                <td>{{ item["category"] }}</td>
+                <td>{{ item["description"] }}</td>
+                <td>{{ item["location"] }}</td>
+                <td>{{ item["date"] }}</td>
+                <td>{{ item["status"] }}</td>
+                <td>{{ item["contact_name"] }}<br>{{ item["contact_email"] }}</td>
+                <td>
+                    <!-- The Claim button is shown only for found items -->
+                    {% if item["status"] == "Found" %}
+                    <a class="button" href="/claim/{{ item['item_id'] }}">Claim</a>
+                    {% else %}
+                    -
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <p>No items found.</p>
+        {% endif %}
+    </div>
+
+</body>
+</html>

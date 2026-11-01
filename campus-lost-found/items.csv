@@ -1,0 +1,33 @@
+item_id,item_name,category,description,location,date,status,contact_name,contact_email
+1,College ID Card,ID Card,Blue lanyard with photo ID of a second year student,Library,2026-10-01,Lost,Arun Kumar,arun.kumar@example.com
+2,Water Bottle,Bottle/Lunch Box,Silver steel bottle with a dent near the bottom,Canteen,2026-10-02,Found,Meena Devi,meena.devi@example.com
+3,Physics Textbook,Book,Engineering Physics book with a green cover,Classroom 204,2026-10-02,Lost,Karthik Raja,karthik.raja@example.com
+4,Black Umbrella,Other,Black foldable umbrella with a wooden handle,Main Gate,2026-10-03,Found,Priya Nair,priya.nair@example.com
+5,Earphones,Electronics,White wired earphones in a small zip pouch,Computer Lab,2026-10-04,Lost,Rahul Sharma,rahul.sharma@example.com
+6,USB Drive,Electronics,Red 16GB pen drive with a small key ring,Laboratory 2,2026-10-05,Found,Divya Lakshmi,divya.lakshmi@example.com
+7,Lunch Box,Bottle/Lunch Box,Yellow plastic lunch box with two compartments,Canteen,2026-10-06,Lost,Sneha Reddy,sneha.reddy@example.com
+8,Scientific Calculator,Electronics,Casio scientific calculator with a scratched back,Exam Hall,2026-10-07,Found,Vikram Singh,vikram.singh@example.com
+9,Pencil Case,Stationery,Blue cloth pencil case with three pens inside,Classroom 101,2026-10-07,Lost,Anjali Menon,anjali.menon@example.com
+10,Backpack,Bag,Grey backpack with a black zip and a keychain,Library,2026-10-08,Found,Suresh Babu,suresh.babu@example.com
+11,College ID Card,ID Card,ID card of a first year ECE student,Playground,2026-10-09,Found,Lakshmi Priya,lakshmi.priya@example.com
+12,Mathematics Notebook,Book,Spiral notebook with a formula sheet inside,Classroom 305,2026-10-09,Lost,Harish Kumar,harish.kumar@example.com
+13,Bluetooth Earbuds,Electronics,Black earbuds case with a small sticker on top,Parking Area,2026-10-10,Lost,Nisha Fernandez,nisha.fernandez@example.com
+14,Water Bottle,Bottle/Lunch Box,Blue plastic bottle with a white cap,Playground,2026-10-11,Found,Imran Khan,imran.khan@example.com
+15,Red Umbrella,Other,Red umbrella with one broken rod,Parking Area,2026-10-12,Lost,Pooja Iyer,pooja.iyer@example.com
+16,Lab Coat,Other,White chemistry lab coat with no name tag,Laboratory 1,2026-10-12,Found,Gokul Raj,gokul.raj@example.com
+17,Wrist Watch,Accessories,Black digital watch with a rubber strap,Playground,2026-10-13,Lost,Aditya Verma,aditya.verma@example.com
+18,Data Structures Textbook,Book,Thick book with a torn corner on the cover,Library,2026-10-14,Found,Shruti Patel,shruti.patel@example.com
+19,Spectacles,Accessories,Black frame glasses in a brown case,Classroom 202,2026-10-14,Lost,Mohan Das,mohan.das@example.com
+20,Bunch of Keys,Other,Three keys with a blue tag,Canteen,2026-10-15,Found,Revathi Selvam,revathi.selvam@example.com
+21,Laptop Charger,Electronics,Black Dell charger with white tape on the wire,Computer Lab,2026-10-16,Lost,Naveen Chandran,naveen.chandran@example.com
+22,Steel Lunch Box,Bottle/Lunch Box,Round steel lunch box with a green lid,Canteen,2026-10-16,Found,Kavya Shetty,kavya.shetty@example.com
+23,Tote Bag,Bag,Cloth tote bag with some notebooks inside,Library,2026-10-17,Lost,Farhan Ali,farhan.ali@example.com
+24,USB Drive,Electronics,Black 32GB pen drive with project files,Computer Lab,2026-10-18,Lost,Deepak Joshi,deepak.joshi@example.com
+25,Geometry Box,Stationery,Metal box with a compass and a divider,Classroom 108,2026-10-19,Found,Ramya Krishnan,ramya.krishnan@example.com
+26,Wallet,Accessories,Brown leather wallet with a bus pass inside,Parking Area,2026-10-20,Found,Joseph Thomas,joseph.thomas@example.com
+27,Earphones,Electronics,Black wired earphones with a tangled wire,Laboratory 2,2026-10-21,Found,Tanvi Desai,tanvi.desai@example.com
+28,Raincoat,Other,Yellow raincoat folded in a plastic cover,Main Gate,2026-10-21,Lost,Ganesh Pillai,ganesh.pillai@example.com
+29,College ID Card,ID Card,Photo ID card in a clear plastic holder,Canteen,2026-10-22,Lost,Fathima Beevi,fathima.beevi@example.com
+30,Scientific Calculator,Electronics,Casio calculator with a name written on the back,Classroom 204,2026-10-23,Lost,Yash Mehta,yash.mehta@example.com
+31,Pencil Case,Stationery,Black zip pencil case with a cartoon sticker,Library,2026-10-24,Found,Bhavana Rao,bhavana.rao@example.com
+32,Laptop Backpack,Bag,Black backpack with a red stripe on the front,Playground,2026-10-26,Lost,Rohit Nambiar,rohit.nambiar@example.com

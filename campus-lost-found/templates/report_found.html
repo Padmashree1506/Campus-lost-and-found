@@ -1,0 +1,74 @@
+<!-- report_found.html - Form to report a found item -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Report Found Item</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- Navigation bar (same on every page) -->
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/report_lost">Report Lost Item</a>
+        <a href="/report_found">Report Found Item</a>
+        <a href="/items">View All Items</a>
+    </div>
+
+    <div class="container">
+        <h1>Report Found Item</h1>
+
+        <!-- Show the error message only if there is one -->
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <!-- If the item was saved, show a success message instead of the form -->
+        {% if message %}
+        <p class="success">{{ message }}</p>
+        <a class="button" href="/items">View All Items</a>
+        <a class="button" href="/report_found">Report Another Item</a>
+        {% else %}
+
+        <form method="POST">
+            <label>Item Name:</label>
+            <input type="text" name="item_name" value="{{ request.form.get('item_name', '') }}" required>
+
+            <label>Item Category:</label>
+            <select name="category" required>
+                <option value="">-- Select Category --</option>
+                <!-- Make one option for every category sent from app.py -->
+                {% for c in categories %}
+                <option value="{{ c }}" {% if request.form.get('category') == c %}selected{% endif %}>{{ c }}</option>
+                {% endfor %}
+            </select>
+
+            <label>Description:</label>
+            <textarea name="description" rows="4" required>{{ request.form.get('description', '') }}</textarea>
+
+            <label>Location where the item was found:</label>
+            <input type="text" name="location" value="{{ request.form.get('location', '') }}" required>
+
+            <label>Date when the item was found:</label>
+            <input type="date" name="date" id="date" value="{{ request.form.get('date', '') }}" required>
+
+            <label>Finder's Name:</label>
+            <input type="text" name="contact_name" value="{{ request.form.get('contact_name', '') }}" required>
+
+            <label>Finder's Email:</label>
+            <input type="email" name="contact_email" value="{{ request.form.get('contact_email', '') }}" required>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <script>
+            // Do not allow a date in the future
+            var today = new Date().toISOString().split("T")[0];
+            document.getElementById("date").max = today;
+        </script>
+
+        {% endif %}
+    </div>
+
+</body>
+</html>

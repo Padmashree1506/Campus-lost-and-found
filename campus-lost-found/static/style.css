@@ -1,0 +1,103 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F3E9DC;
+    color: #35251F;
+    margin: 0;
+}
+
+/* Navigation bar at the top */
+.navbar {
+    background-color: #5B1E2D;
+    padding: 15px;
+}
+
+.navbar a {
+    color: #FFF9F2;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+/* Main content area */
+.container {
+    padding: 20px;
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: #5B1E2D;
+}
+
+/* Tables */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+    background-color: #FFF9F2;
+}
+
+th, td {
+    border: 1px solid #C9B6A5;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #5B1E2D;
+    color: white;
+}
+
+/* Form fields */
+label {
+    display: block;
+    margin-top: 10px;
+    color: #35251F;
+}
+
+input, select, textarea {
+    width: 300px;
+    padding: 7px;
+    font-family: Arial, sans-serif;
+    background-color: #FFF9F2;
+    border: 1px solid #8B6F5C;
+}
+
+.search-form input,
+.search-form select {
+    width: auto;
+}
+
+/* Buttons and links that look like buttons */
+button, .button {
+    background-color: #5B1E2D;
+    color: white;
+    border: 1px solid #3D1420;
+    padding: 7px 12px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+button:hover, .button:hover {
+    background-color: #3D1420;
+}
+
+/* Links */
+a {
+    color: #5B1E2D;
+}
+
+/* Messages */
+.success {
+    color: green;
+    font-weight: bold;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
